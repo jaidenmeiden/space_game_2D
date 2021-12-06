@@ -59,11 +59,11 @@ public class PlayerController : MonoBehaviour
             )){
             //TODO: program ground contact logic
             //Debug.Log("Ground collision!");
-            _animator.enabled = true;
+            //_animator.enabled = true;
             return true;
         }else {
             //TODO: program non-contact logic
-            _animator.enabled = false;
+            //_animator.enabled = false;
             return false;
         }
     }
