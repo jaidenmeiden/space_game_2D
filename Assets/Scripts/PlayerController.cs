@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Movement player
     public float jumpForce = 6f;
+    public float runningSpeed = 2f;
     private Rigidbody2D _playerRigidbody;
     private Animator _animator;
 
@@ -38,7 +39,18 @@ public class PlayerController : MonoBehaviour
 
         _animator.SetBool(STATE_ON_THE_GROUND, IsTouchingTheGround());
         
-        Debug.DrawRay(this.transform.position, Vector2.down * 1.5f, Color.red);
+        Debug.DrawRay(this.transform.position, 
+            Vector2.down * 1.5f, 
+            Color.red
+            );
+    }
+
+    void FixedUpdate()
+    {
+        if (_playerRigidbody.velocity.x < runningSpeed)
+        {
+            _playerRigidbody.velocity = new Vector2(runningSpeed, _playerRigidbody.velocity.y);
+        }
     }
 
     void Jump()
