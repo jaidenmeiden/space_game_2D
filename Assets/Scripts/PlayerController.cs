@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     // Movement player
     public float jumpForce = 6f;
     private Rigidbody2D _playerRigidbody;
+    private Animator _animator;
+
+    const string STATE_ALIVE = "isAlive";
+    const string STATE_ON_THE_GROUND = "isOnTheGround";
     
     // Detect which elements it can collide with me
     public LayerMask groundMask;
@@ -14,12 +18,14 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         _playerRigidbody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        _animator.SetBool(STATE_ALIVE, true);
+        _animator.SetBool(STATE_ON_THE_GROUND, false);
     }
 
     // Update is called once per frame
@@ -29,6 +35,8 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+
+        _animator.SetBool(STATE_ON_THE_GROUND, IsTouchingTheGround());
         
         Debug.DrawRay(this.transform.position, Vector2.down * 1.5f, Color.red);
     }
@@ -50,10 +58,12 @@ public class PlayerController : MonoBehaviour
             groundMask // Ground mask for contact
             )){
             //TODO: program ground contact logic
-            Debug.Log("Ground collision!");
+            //Debug.Log("Ground collision!");
+            _animator.enabled = true;
             return true;
         }else {
             //TODO: program non-contact logic
+            _animator.enabled = false;
             return false;
         }
     }
