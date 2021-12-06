@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        
+        Debug.DrawRay(this.transform.position, Vector2.down * 1.5f, Color.red);
     }
 
     void Jump()
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
             groundMask // Ground mask for contact
             )){
             //TODO: program ground contact logic
+            Debug.Log("Ground collision!");
             return true;
         }else {
             //TODO: program non-contact logic
