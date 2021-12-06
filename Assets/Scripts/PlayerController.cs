@@ -41,10 +41,12 @@ public class PlayerController : MonoBehaviour
     
     //It tells us whether or not the character is touching the ground
     bool IsTouchingTheGround(){
-        if(Physics2D.Raycast(this.transform.position,
-            Vector2.down,
-            1.5f, 
-            groundMask)){
+        if(Physics2D.Raycast(
+            this.transform.position, // Where am I
+            Vector2.down, // Lightning to the ground
+            1.5f, // Distance to ground
+            groundMask // Ground mask for contact
+            )){
             //TODO: program ground contact logic
             return true;
         }else {
