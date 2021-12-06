@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 6277152026664103443
-    second: ball_1
+    second: ball_b
   - first:
       213: -996285667201416337
     second: die_1
@@ -13,25 +13,25 @@ TextureImporter:
     second: die_2
   - first:
       213: 7336388210466114642
-    second: ball_2
+    second: ball_t
   - first:
       213: -5097647541260762619
-    second: ball_3
+    second: ball_r
   - first:
       213: 3421206588688123152
     second: die_3
   - first:
       213: -4669188699835424353
-    second: ball_4
+    second: ball_g
   - first:
       213: 4010302209748201286
-    second: ball_5
+    second: ball_p
   - first:
       213: -2724868996660943631
-    second: ball_6
+    second: ball_w
   - first:
       213: 1215018767098533329
-    second: ball_7
+    second: ball_y
   - first:
       213: -6723461406285876323
     second: jump_1
@@ -73,7 +73,7 @@ TextureImporter:
     second: run_5
   - first:
       213: -7620621983777257372
-    second: rock_2
+    second: rock_1
   - first:
       213: 5679897224089034818
     second: enemy_2
@@ -109,25 +109,25 @@ TextureImporter:
     second: potion_1
   - first:
       213: -3532133655125953119
-    second: rock_2
+    second: rock_1
   - first:
       213: 6691287902862017832
-    second: rock_3
+    second: rock_2
   - first:
       213: 4157115847226850640
-    second: space
+    second: background
   - first:
       213: 2758995749061410447
-    second: floor_1
+    second: platform_m
   - first:
       213: -1210262882860465325
-    second: floor_2
+    second: platform_s
   - first:
       213: 9179272126259092667
-    second: floor_3
+    second: floor
   - first:
       213: 7668746392148799563
-    second: floor_4
+    second: platform_l
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -241,7 +241,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ball_1
+      name: ball_b
       rect:
         serializedVersion: 2
         x: 55
@@ -304,7 +304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_2
+      name: ball_t
       rect:
         serializedVersion: 2
         x: 55
@@ -325,7 +325,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_3
+      name: ball_r
       rect:
         serializedVersion: 2
         x: 119
@@ -367,7 +367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_4
+      name: ball_g
       rect:
         serializedVersion: 2
         x: 55
@@ -388,7 +388,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_5
+      name: ball_p
       rect:
         serializedVersion: 2
         x: 118
@@ -409,7 +409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_6
+      name: ball_w
       rect:
         serializedVersion: 2
         x: 55
@@ -430,7 +430,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ball_7
+      name: ball_y
       rect:
         serializedVersion: 2
         x: 118
@@ -724,7 +724,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_1
+      name: rock_3
       rect:
         serializedVersion: 2
         x: 1334
@@ -976,7 +976,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_2
+      name: rock_1
       rect:
         serializedVersion: 2
         x: 1324
@@ -997,7 +997,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_3
+      name: rock_2
       rect:
         serializedVersion: 2
         x: 1441
@@ -1018,7 +1018,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: space
+      name: background
       rect:
         serializedVersion: 2
         x: 80
@@ -1039,7 +1039,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_1
+      name: platform_m
       rect:
         serializedVersion: 2
         x: 91
@@ -1060,7 +1060,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_2
+      name: platform_s
       rect:
         serializedVersion: 2
         x: 707
@@ -1081,7 +1081,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_3
+      name: floor
       rect:
         serializedVersion: 2
         x: 1158
@@ -1102,7 +1102,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_4
+      name: platform_l
       rect:
         serializedVersion: 2
         x: 92
