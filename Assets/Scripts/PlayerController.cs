@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
             groundMask // Ground mask for contact
             )){
             //TODO: program ground contact logic
+            GameManager.ShareInstance.currentGameState = GameState.InGame;
             //Debug.Log("Ground collision!");
             //_animator.enabled = true;
             return true;

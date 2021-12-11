@@ -68,4 +68,9 @@ Awake is called either when an active GameObject that contains the script is ini
 
 [MonoBehaviour.Awake()](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Awake.html)
 
+### Design Patterns
+
+## Singleton
+
+El Singleton es un script que solo podemos usar una vez durante todo el videojuego, el truco para crear estas clases especiales es declarar un método especial usando la palabra static. En esta clase vamos a convertir nuestro script GameManager a una clase con su método estático para asegurarnos que no habrá más de un controlador de las etapas de nuestro juego.
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,15 @@ public enum GameState{
 public class GameManager : MonoBehaviour {
 
     public GameState currentGameState = GameState.Menu;
+    public static GameManager ShareInstance;//Singleton
+
+    private void Awake()
+    {
+        if (ShareInstance == null)
+        {
+            ShareInstance = this;
+        }
+    }
 
     // Use this for initialization
     void Start () {
