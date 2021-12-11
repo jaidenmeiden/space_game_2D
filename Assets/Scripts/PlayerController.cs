@@ -69,14 +69,9 @@ public class PlayerController : MonoBehaviour
             1.5f, // Distance to ground
             groundMask // Ground mask for contact
             )){
-            //TODO: program ground contact logic
-            GameManager.ShareInstance.currentGameState = GameState.InGame;
-            //Debug.Log("Ground collision!");
-            //_animator.enabled = true;
+            
             return true;
         }else {
-            //TODO: program non-contact logic
-            //_animator.enabled = false;
             return false;
         }
     }
