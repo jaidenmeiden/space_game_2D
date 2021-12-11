@@ -12,13 +12,13 @@ public enum GameState{
 public class GameManager : MonoBehaviour {
 
     public GameState currentGameState = GameState.Menu;
-    public static GameManager ShareInstance;//Singleton
+    public static GameManager SharedInstance;//Singleton
 
     private void Awake()
     {
-        if (ShareInstance == null)
+        if (SharedInstance == null)
         {
-            ShareInstance = this;
+            SharedInstance = this;
         }
     }
 
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 	
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetButtonDown("Submit"))
         {
             StartGame();
         }
