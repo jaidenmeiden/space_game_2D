@@ -523,13 +523,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBlock0
       objectReference: {fileID: 0}
-    - target: {fileID: 1968706621845903160, guid: 42cae54d994cf3e4f801855099abefe5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968706621845903163, guid: 42cae54d994cf3e4f801855099abefe5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42cae54d994cf3e4f801855099abefe5, type: 3}
