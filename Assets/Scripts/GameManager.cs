@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 
     public GameState currentGameState = GameState.Menu;
     public static GameManager SharedInstance;//Singleton
+    private PlayerController _controller;
 
     private void Awake()
     {
@@ -24,7 +25,10 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        // Function to find an object by name
+		_controller = GameObject.Find("Player").GetComponent<PlayerController>();
+        // Similar function to find an object, but by tag. We have the same result
+		//_controller = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
 	
     // Update is called once per frame
@@ -56,6 +60,7 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.InGame:
                 //TODO: Prepare the scene to play
+                _controller.StartGame();
                 break;
             case GameState.GameOver:
                 //TODO: Prepare the game to 'Game over'
