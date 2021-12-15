@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +30,28 @@ public class LevelManager : MonoBehaviour
 
     public void AddLevelBlock()
     {
+        int randomIdx = Random.Range(0, AllTheLevelBlocks.Count);
+        LevelBlock block;
+        Vector3 spawnPosition = Vector3.zero;
+        if (CurrentTheLevelBlocks.Count == 0)
+        {
+            block = Instantiate(AllTheLevelBlocks[0]);
+            spawnPosition = LevelStartPosition.position;
+        }
+        else
+        {
+            block = Instantiate(AllTheLevelBlocks[randomIdx]);
+            spawnPosition = CurrentTheLevelBlocks[CurrentTheLevelBlocks.Count -1].ExitPoint.position;
+        }
         
+        block.transform.SetParent(this.transform, false);
+        Vector3 correction = new Vector3(
+            spawnPosition.x - block.StartPoint.position.x,
+            spawnPosition.y - block.StartPoint.position.y,
+            0
+            );
+        block.transform.position = correction;
+        CurrentTheLevelBlocks.Add(block);
     }
 
     public void RemoveLevelBlock()
