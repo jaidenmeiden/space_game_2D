@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour {
                 break;
             case GameState.InGame:
                 //TODO: Prepare the scene to play
+                LevelManager.SharedInstance.RemoveAllLevelBlocks();
+                LevelManager.SharedInstance.GenerateInitialBlocks();
                 _controller.StartGame();
                 break;
             case GameState.GameOver:
