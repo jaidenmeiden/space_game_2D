@@ -77,3 +77,7 @@ El Singleton es un script que solo podemos usar una vez durante todo el videojue
 ### Fonts
 
 [Download fonts](https://www.dafont.com/es/)
+
+### Platform #define directives
+
+[Platform #define directives](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)
