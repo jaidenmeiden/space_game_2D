@@ -57,15 +57,18 @@ public class GameManager : MonoBehaviour {
         {
             case GameState.Menu:
                 //TODO: Put the logic into menu
+                MenuManager.SharedInstance.ShowMainMenu();
                 break;
             case GameState.InGame:
                 //TODO: Prepare the scene to play
                 LevelManager.SharedInstance.RemoveAllLevelBlocks();
                 LevelManager.SharedInstance.GenerateInitialBlocks();
                 _controller.StartGame();
+                MenuManager.SharedInstance.HideMainMenu();
                 break;
             case GameState.GameOver:
                 //TODO: Prepare the game to 'Game over'
+                MenuManager.SharedInstance.ShowMainMenu();
                 break;
             default:
                 break;
