@@ -7,6 +7,8 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager SharedInstance;
     public Canvas menuCanvas;
+    public Canvas scoreCanvas;
+    public Canvas gameOverCanvas;
 
     private void Awake()
     {
@@ -14,6 +16,9 @@ public class MenuManager : MonoBehaviour
         {
             SharedInstance = this;
         }
+        menuCanvas.enabled = true;
+        scoreCanvas.enabled = false;
+        gameOverCanvas.enabled = false;
     }
 
     public void ShowMainMenu()
@@ -24,6 +29,26 @@ public class MenuManager : MonoBehaviour
     public void HideMainMenu()
     {
         menuCanvas.enabled = false;
+    }
+
+    public void ShowScoreMenu()
+    {
+        scoreCanvas.enabled = true;
+    }
+
+    public void HideScoreMenu()
+    {
+        scoreCanvas.enabled = false;
+    }
+
+    public void ShowGameOverMenu()
+    {
+        gameOverCanvas.enabled = true;
+    }
+
+    public void HideGameOverMenu()
+    {
+        gameOverCanvas.enabled = false;
     }
 
     public void ExitGameMenu()
