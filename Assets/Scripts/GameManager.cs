@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     public GameState currentGameState = GameState.Menu;
     public static GameManager SharedInstance;//Singleton
     private PlayerController _controller;
+    public int collectedObjectsCount = 0;
 
     private void Awake()
     {
@@ -81,5 +82,10 @@ public class GameManager : MonoBehaviour {
         }
         
         this.currentGameState = newGameSate;
+    }
+
+    public void CollectObject(Collectable collectable)
+    {
+        collectedObjectsCount += collectable.value;
     }
 }
