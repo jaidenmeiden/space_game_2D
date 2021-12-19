@@ -7,12 +7,18 @@ public class PlayerController : MonoBehaviour
     // Movement player
     public float jumpForce = 6f;
     public float runningSpeed = 2f;
+    
     private Rigidbody2D _playerRigidbody;
     private Animator _animator;
     private Vector3 _startPosition;
 
     const string STATE_ALIVE = "isAlive";
     const string STATE_ON_THE_GROUND = "isOnTheGround";
+
+    private int helthPoints, manaPoints;
+
+    public const int INITIAL_HEALTH = 100, MAX_HEALTH = 200, MIN_HEALTH = 10, 
+        INITIAL_MANA = 15, MAX_MANA = 30, MIN_MANA = 0;
     
     // Detect which elements it can collide with me
     public LayerMask groundMask;
@@ -90,6 +96,9 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool(STATE_ALIVE, true);
         _animator.SetBool(STATE_ON_THE_GROUND, false);
 
+        helthPoints = INITIAL_HEALTH;
+        manaPoints = INITIAL_MANA;
+
         Invoke("RestartPosition", 0.1f);
     }
 
@@ -105,5 +114,33 @@ public class PlayerController : MonoBehaviour
     {
         this._animator.SetBool(STATE_ALIVE, false);
         GameManager.SharedInstance.GameOver();
+    }
+
+    public void CollectHealth(int points)
+    {
+        this.helthPoints += points;
+        if (this.helthPoints > MAX_HEALTH)
+        {
+            this.helthPoints = MAX_HEALTH;
+        }
+    }
+
+    public void CollectMana(int points)
+    {
+        this.manaPoints += points;
+        if (this.manaPoints > MAX_MANA)
+        {
+            this.manaPoints = MAX_MANA;
+        }
+    }
+
+    public int GetHealth()
+    {
+        return this.helthPoints;
+    }
+
+    public int GetMana()
+    {
+        return this.manaPoints;
     }
 }
