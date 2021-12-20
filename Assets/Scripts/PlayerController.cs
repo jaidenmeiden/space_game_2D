@@ -18,8 +18,11 @@ public class PlayerController : MonoBehaviour
     private int helthPoints, manaPoints;
 
     public const int INITIAL_HEALTH = 100, MAX_HEALTH = 200, MIN_HEALTH = 10, 
-        INITIAL_MANA = 15, MAX_MANA = 30, MIN_MANA = 0;
-    
+        INITIAL_MANA = 15, MAX_MANA = 30, MIN_MANA = 0,
+        SUPER_JUMP_COST = 5;
+
+    public const float SUPER_JUMP_FORCE = 1.5f;
+
     // Detect which elements it can collide with me
     public LayerMask groundMask;
 
@@ -41,7 +44,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            Jump();
+            Jump(false);
+        }
+        if (Input.GetButtonDown("SuperJump"))
+        {
+            Jump(true);
         }
 
         _animator.SetBool(STATE_ON_THE_GROUND, IsTouchingTheGround());
@@ -68,11 +75,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Jump()
+    void Jump(bool isSuperJump)
     {
-        if (IsTouchingTheGround())
+        float jumpForceFactor = jumpForce;
+        if (isSuperJump && manaPoints >= SUPER_JUMP_COST)
         {
-            _playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            manaPoints -= SUPER_JUMP_COST;
+            jumpForceFactor *= SUPER_JUMP_FORCE;
+        }
+        if (GameManager.SharedInstance.currentGameState == GameState.InGame)
+        {
+            if (IsTouchingTheGround())
+            {
+                _playerRigidbody.AddForce(Vector2.up * jumpForceFactor, ForceMode2D.Impulse);
+            } 
         }
     }
     
