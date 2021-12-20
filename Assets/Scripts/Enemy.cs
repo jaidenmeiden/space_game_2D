@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float runningSpeed = 1.5f;
+    public int enemyDamage = 10;
     private Rigidbody2D rigidBody;
     private Vector3 _startPosition;
     public bool facingRight = false;
@@ -39,6 +40,26 @@ public class Enemy : MonoBehaviour
         if (GameManager.SharedInstance.currentGameState == GameState.InGame)
         {
             rigidBody.velocity = new Vector2(currentRunningSpeed, rigidBody.velocity.y);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Player"))
+        {
+            collision.GetComponent<PlayerController>().CollectHealth(-enemyDamage);
+            return;
+        }
+        else
+        {
+            if (collision.tag.Equals("Coin"))
+            {
+                return;
+            }
+            else
+            {
+                this.facingRight = !facingRight;
+            }
         }
     }
 }
