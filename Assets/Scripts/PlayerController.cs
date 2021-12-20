@@ -112,6 +112,13 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        float travelledDistance = GetTravelledDistance();
+        float previousMaxDistance = PlayerPrefs.GetFloat("maxscore", 0f);
+        if (travelledDistance > previousMaxDistance)
+        {
+            PlayerPrefs.SetFloat("maxscore", travelledDistance);
+        }
+        
         this._animator.SetBool(STATE_ALIVE, false);
         GameManager.SharedInstance.GameOver();
     }
@@ -142,5 +149,10 @@ public class PlayerController : MonoBehaviour
     public int GetMana()
     {
         return this.manaPoints;
+    }
+
+    public float GetTravelledDistance()
+    {
+        return this.transform.position.x - _startPosition.x;
     }
 }
