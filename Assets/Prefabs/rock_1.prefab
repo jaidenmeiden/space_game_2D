@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7184689340989649742}
   - component: {fileID: 7184689340989649743}
-  - component: {fileID: 7184689340989649736}
+  - component: {fileID: 5209649452876474536}
   m_Layer: 6
   m_Name: rock_1
-  m_TagString: Untagged
+  m_TagString: Small Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7184689340989649736
-BoxCollider2D:
+--- !u!60 &5209649452876474536
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,6 +106,19 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.91, y: 0.55010116}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.24177611, y: 0.24132246}
+      - {x: 0.2187807, y: 0.26050478}
+      - {x: 0.055478297, y: 0.2820217}
+      - {x: -0.21824878, y: 0.23062246}
+      - {x: -0.297935, y: 0.20147933}
+      - {x: -0.42139432, y: 0.015181543}
+      - {x: -0.4398374, y: -0.20025936}
+      - {x: -0.38917738, y: -0.24698938}
+      - {x: -0.11397181, y: -0.2784671}
+      - {x: 0.31617075, y: -0.2784671}
+      - {x: 0.39437848, y: -0.26543248}
+      - {x: 0.45721698, y: -0.19103782}
+      - {x: 0.46029085, y: -0.09598237}
+      - {x: 0.41270468, y: 0.00903385}

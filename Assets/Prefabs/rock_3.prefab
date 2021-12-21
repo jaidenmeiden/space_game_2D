@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5215278546477959308}
   - component: {fileID: 5215278546477959307}
-  - component: {fileID: 5215278546477959306}
+  - component: {fileID: 6726326189913460516}
   m_Layer: 6
   m_Name: rock_3
-  m_TagString: Rock
+  m_TagString: Big Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5215278546477959306
+--- !u!61 &6726326189913460516
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0036890507, y: -0.04426837}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,5 +107,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.27, y: 2.2904212}
+  m_Size: {x: 1.1888416, y: 2.1281042}
   m_EdgeRadius: 0
