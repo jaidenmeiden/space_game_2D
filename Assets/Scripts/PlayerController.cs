@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     const string STATE_ALIVE = "isAlive";
     const string STATE_ON_THE_GROUND = "isOnTheGround";
 
+    [SerializeField]
     private int helthPoints, manaPoints;
 
     public const int INITIAL_HEALTH = 100, MAX_HEALTH = 200, MIN_HEALTH = 10, 
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
         SUPER_JUMP_COST = 5;
 
     public const float SUPER_JUMP_FORCE = 1.5f;
+    
+    public float jumpRaycastDistance = 1.5f;
 
     // Detect which elements it can collide with me
     public LayerMask groundMask;
@@ -54,7 +57,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool(STATE_ON_THE_GROUND, IsTouchingTheGround());
         
         Debug.DrawRay(this.transform.position, 
-            Vector2.down * 1.5f, 
+            Vector2.down * jumpRaycastDistance, 
             Color.red
             );
     }
@@ -97,7 +100,7 @@ public class PlayerController : MonoBehaviour
         if(Physics2D.Raycast(
             this.transform.position, // Where am I
             Vector2.down, // Lightning to the ground
-            1.5f, // Distance to ground
+            jumpRaycastDistance, // Distance to ground
             groundMask // Ground mask for contact
             )){
             
