@@ -4,30 +4,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Detect which elements it can collide with me
+    public LayerMask groundMask;
     // Movement player
-    public float jumpForce = 6f;
-    public float runningSpeed = 2f;
+    public float jumpForce = 6f, runningSpeed = 2f, jumpRaycastDistance = 1.5f;
     
     private Rigidbody2D _playerRigidbody;
     private Animator _animator;
     private Vector3 _startPosition;
-
-    const string STATE_ALIVE = "isAlive";
-    const string STATE_ON_THE_GROUND = "isOnTheGround";
-
     [SerializeField]
     private int helthPoints, manaPoints;
 
+    const string STATE_ALIVE = "isAlive";
+    const string STATE_ON_THE_GROUND = "isOnTheGround";
+    public const float SUPER_JUMP_FORCE = 1.5f;
     public const int INITIAL_HEALTH = 100, MAX_HEALTH = 200, MIN_HEALTH = 10, 
         INITIAL_MANA = 15, MAX_MANA = 30, MIN_MANA = 0,
         SUPER_JUMP_COST = 5;
-
-    public const float SUPER_JUMP_FORCE = 1.5f;
-    
-    public float jumpRaycastDistance = 1.5f;
-
-    // Detect which elements it can collide with me
-    public LayerMask groundMask;
 
     void Awake()
     {
