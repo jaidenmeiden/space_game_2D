@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.position = _startPosition;
+        //this.transform.position = _startPosition;
     }
 
     private void FixedUpdate()
