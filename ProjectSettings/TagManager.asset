@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Coin
   - Enemy
-  - Rock
+  - Small Rock
+  - Medium Rock
+  - Big Rock
   layers:
   - Default
   - TransparentFX
