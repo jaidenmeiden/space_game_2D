@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -171,5 +172,27 @@ public class PlayerController : MonoBehaviour
     public float GetTravelledDistance()
     {
         return this.transform.position.x - _startPosition.x;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Big Rock"))
+        {
+            this.jumpRaycastDistance = 2.7f;
+            return;
+        }
+        else
+        {
+            if (collision.tag.Equals("Medium Rock"))
+            {
+                this.jumpRaycastDistance = 2.0f;
+                return;
+            }
+            else
+            {
+                this.jumpRaycastDistance = 1.5f;
+                return;
+            }
+        }
     }
 }
