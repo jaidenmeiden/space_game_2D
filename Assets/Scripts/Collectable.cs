@@ -46,6 +46,7 @@ public class Collectable : MonoBehaviour
         {
             case CollectableType.Money:
                 GameManager.SharedInstance.CollectObject(this);
+                GetComponent<AudioSource>().Play();
                 break;
             case CollectableType.HealthPotion:
                 this.player.GetComponentInChildren<PlayerController>().CollectHealth(this.value);
