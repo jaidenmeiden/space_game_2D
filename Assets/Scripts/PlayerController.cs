@@ -142,6 +142,11 @@ public class PlayerController : MonoBehaviour
         {
             this.helthPoints = MAX_HEALTH;
         }
+
+        if (this.helthPoints <= 0)
+        {
+            Die();
+        }
     }
 
     public void CollectMana(int points)
