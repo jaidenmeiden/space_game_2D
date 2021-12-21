@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
         {
             if (IsTouchingTheGround())
             {
+                GetComponent<AudioSource>().Play();
                 _playerRigidbody.AddForce(Vector2.up * jumpForceFactor, ForceMode2D.Impulse);
             } 
         }
